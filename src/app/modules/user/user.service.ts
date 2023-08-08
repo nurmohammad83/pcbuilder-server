@@ -23,15 +23,7 @@ const createUser = async (userData: IUser) => {
     Number(config.bcrypt_salt_rounds)
   );
   const result = await User.create(userData);
-  const email = result?.email;
-  const password = result?.email;
-  const accessToken = jwtHelpers.createToken(
-    { email, password },
-    config.jwt.secret_token as Secret,
-    config.jwt.expire_in as string
-  );
-
-  return { email, accessToken };
+  return result;
 };
 
 const loginUser = async (payload: ILoginUser): Promise<ILoginUserResponse> => {
