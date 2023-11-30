@@ -5,8 +5,9 @@ const createCategory = async (data: ICategory) => {
   const result = await Categories.create(data);
   return result;
 };
+
 const getCategories = async () => {
-  const result = await Categories.find();
+  const result = await Categories.find().lean();
   return result;
 };
 

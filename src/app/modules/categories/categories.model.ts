@@ -10,6 +10,10 @@ const categorySchema = new Schema<ICategory, CategoryModel>({
     type: String,
     required: true,
   },
+  product: {
+    type: Schema.Types.ObjectId,
+    ref: 'Products',
+  },
 });
 
 export const Categories = model<ICategory, CategoryModel>(
