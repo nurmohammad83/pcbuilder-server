@@ -1,5 +1,5 @@
 {
-  "editor.codeActionOnSave": {
+  "editor.codeActionOnSave":{
     "source.fixAll.eslint": true,
     "source.origanizeImports": true
   }
