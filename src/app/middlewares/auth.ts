@@ -16,6 +16,7 @@ const auth = () => async (req: Request, res: Response, next: NextFunction) => {
       token,
       config.jwt.secret_token as Secret
     ) as JwtPayload;
+
     if (!verbifiedUser) {
       throw new ApiError(httpStatus.UNAUTHORIZED, 'Invalid Token');
     }
